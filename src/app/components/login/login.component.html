@@ -1,0 +1,13 @@
+<div
+  class="w3-container w3-block"
+>
+  <div
+    class="login-form w3-card"
+  >
+    <ngx-auth-firebaseui
+      [providers]="[providers.EmailAndPassword, providers.Google]"
+      [guestEnabled]="false"
+    >
+    </ngx-auth-firebaseui>
+  </div>
+</div>
