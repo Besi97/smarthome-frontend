@@ -8,11 +8,20 @@ import {ExtendedModule} from '@angular/flex-layout';
 import {LoginComponent} from './components/login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
+import { DevicesComponent } from './components/devices/devices.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
+import {routes} from './routes';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DevicesComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,13 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
     }),
     RouterModule.forRoot(routes),
     ExtendedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [
     {
