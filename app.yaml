@@ -6,7 +6,7 @@ threadsafe: yes
 handlers:
   - url: /(.*\.(js|map|css|svg|ico|ttf|eot|woff|woff2))$
     static_files: dist/\1
-    upload: dist/.*\.(js|map|css)$
+    upload: dist/.*\.(js|map|css|svg|ico|ttf|eot|woff|woff2)$
     secure: always
   - url: /.*
     static_files: dist/index.html
