@@ -26,9 +26,7 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
       appId: '1:1084599950315:web:61672e98584e56dfcfd7ae',
       measurementId: 'G-L4RZDKZ0RD'
     }),
-    RouterModule.forRoot([
-      { path: '**', component: LoginComponent }
-    ]),
+    RouterModule.forRoot(routes),
     ExtendedModule,
     HttpClientModule
   ],
