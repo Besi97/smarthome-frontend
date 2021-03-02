@@ -4,7 +4,7 @@ service: default
 threadsafe: yes
 
 handlers:
-  - url: /(.*\.(js|map|css))$
+  - url: /(.*\.(js|map|css|svg|ico|ttf|eot|woff|woff2))$
     static_files: dist/\1
     upload: dist/.*\.(js|map|css)$
     secure: always
