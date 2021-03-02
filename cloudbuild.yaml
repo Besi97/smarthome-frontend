@@ -1,0 +1,17 @@
+steps:
+
+  # Install node packages
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'install' ]
+
+  # Build production files
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'run', 'build', '--prod' ]
+
+  # deploy dispatch yaml
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ['app', 'deploy', '/workspace/dispatch.yaml']
+
+  # Deploy to google cloud app engine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', '--version=prod']

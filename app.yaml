@@ -1,0 +1,24 @@
+runtime: python27
+api_version: 1
+service: default
+threadsafe: yes
+
+handlers:
+  - url: /(.*\.(js|map|css))$
+    static_files: dist/\1
+    upload: dist/.*\.(js|map|css)$
+    secure: always
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
