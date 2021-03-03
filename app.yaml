@@ -21,4 +21,6 @@ skip_files:
   - ^(.*/)?.*\.json$
   - ^(.*/)?.*\.md$
   - ^(.*/)?.*\.yaml$
+  - ^karma.conf.js$
+  - ^.*\.iml$
   - ^LICENSE
