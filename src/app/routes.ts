@@ -8,5 +8,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, ...canActivate(redirectLoggedInToHome)},
-  { path: '', pathMatch: 'full', component: DevicesComponent, ...canActivate(redirectUnauthorizedToLogin)}
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then( module => module.AdminModule )},
+  { path: '', pathMatch: 'full', component: DevicesComponent, ...canActivate(redirectUnauthorizedToLogin)},
+  { path: '**', redirectTo: ''}
 ];
