@@ -37,8 +37,13 @@ export class DevicesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http.get('https://smarthome.besi.dev/api/admin/' + firebase.auth().currentUser.uid).subscribe( response => console.log(response) );
-    this.http.get('https://smarthome.besi.dev/api/admin/test').subscribe( response => console.log(response) );
+    const uid = firebase.auth().currentUser.uid;
+    this.http.get('https://test.smarthome.besi.dev/api/admin/get/' + uid).subscribe( response => console.log(response) );
+    this.http.get('https://test.smarthome.besi.dev/api/admin/' + uid).subscribe( response => {
+      console.log(response);
+      this.http.get('https://test.smarthome.besi.dev/api/admin/get/' + uid).subscribe( resp => console.log(resp) );
+    } );
+    this.http.get('https://test.smarthome.besi.dev/api/admin/test').subscribe( response => console.log(response) );
   }
 
 }
