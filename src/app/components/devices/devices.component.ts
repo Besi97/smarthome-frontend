@@ -1,15 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import {HttpClient} from '@angular/common/http';
-import firebase from 'firebase';
 
 @Component({
   selector: 'app-devices',
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.css']
 })
-export class DevicesComponent implements OnInit {
+export class DevicesComponent {
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -32,18 +30,7 @@ export class DevicesComponent implements OnInit {
   );
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
-    private http: HttpClient
+    private breakpointObserver: BreakpointObserver
   ) {}
-
-  ngOnInit(): void {
-    const uid = firebase.auth().currentUser.uid;
-    this.http.get('https://test.smarthome.besi.dev/api/admin/get/' + uid).subscribe( response => console.log(response) );
-    this.http.get('https://test.smarthome.besi.dev/api/admin/' + uid).subscribe( response => {
-      console.log(response);
-      this.http.get('https://test.smarthome.besi.dev/api/admin/get/' + uid).subscribe( resp => console.log(resp) );
-    } );
-    this.http.get('https://test.smarthome.besi.dev/api/admin/test').subscribe( response => console.log(response) );
-  }
 
 }
