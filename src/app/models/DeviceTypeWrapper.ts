@@ -1,0 +1,3 @@
+interface DeviceTypeWrapper {
+  type: DeviceType;
+}

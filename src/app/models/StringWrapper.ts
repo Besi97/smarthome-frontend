@@ -1,0 +1,3 @@
+interface StringWrapper {
+  data: string;
+}
