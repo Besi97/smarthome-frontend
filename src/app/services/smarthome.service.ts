@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {map, mergeMap, take} from 'rxjs/operators';
 import {Observable} from 'rxjs';
@@ -35,9 +35,9 @@ export class SmarthomeService {
     );
   }
 
-  get<T>(path: string): Observable<T> {
+  get<T>(path: string, params?: HttpParams | {[p: string]: string | string[]}): Observable<T> {
     return this.requestWithAuthHeaders(authHeaders => {
-      return this.http.get<T>(environment.apiBaseUrl + path, {headers: authHeaders});
+      return this.http.get<T>(environment.apiBaseUrl + path, {headers: authHeaders, params});
     });
   }
 
