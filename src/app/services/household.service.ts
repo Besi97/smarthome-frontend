@@ -34,18 +34,15 @@ export class HouseholdService {
   }
 
   postHousehold(name: string): Observable<Household> {
-    const payload: StringWrapper = {data: name};
-    return this.smarthomeService.post<Household>(this.householdsPath, payload);
+    return this.smarthomeService.post<StringWrapper, Household>(this.householdsPath, {data: name});
   }
 
   updateHouseholdName(householdId: string, newName: string): Observable<Household> {
-    const payload: StringWrapper = {data: newName};
-    return this.smarthomeService.put<Household>(`${this.householdsPath}/${householdId}`, payload);
+    return this.smarthomeService.put<StringWrapper, Household>(`${this.householdsPath}/${householdId}`, {data: newName});
   }
 
   addDeviceToHousehold(householdId: string, deviceId: string): Observable<Household> {
-    const payload: StringWrapper = {data: deviceId};
-    return this.smarthomeService.put<Household>(`${this.householdsPath}/${householdId}/devices`, payload);
+    return this.smarthomeService.put<StringWrapper, Household>(`${this.householdsPath}/${householdId}/devices`, {data: deviceId});
   }
 
   removeDeviceFromHousehold(householdId: string, deviceId: string): Observable<Household> {
@@ -53,8 +50,7 @@ export class HouseholdService {
   }
 
   addUserToHousehold(householdId: string, userEmail: string): Observable<Household> {
-    const payload: StringWrapper = {data: userEmail};
-    return this.smarthomeService.put<Household>(`${this.householdsPath}/${householdId}/users`, payload);
+    return this.smarthomeService.put<StringWrapper, Household>(`${this.householdsPath}/${householdId}/users`, {data: userEmail});
   }
 
 }

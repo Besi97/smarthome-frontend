@@ -34,13 +34,11 @@ export class DeviceService {
   }
 
   postDevice(type: DeviceType): Observable<Device> {
-    const payload: DeviceTypeWrapper = {type};
-    return this.smarthomeService.post<Device>(this.devicesPath, payload);
+    return this.smarthomeService.post<DeviceTypeWrapper, Device>(this.devicesPath, {type});
   }
 
   updateDeviceName(deviceId: string, newName: string): Observable<Device> {
-    const payload: StringWrapper = {data: newName};
-    return this.smarthomeService.put<Device>(`${this.devicesPath}/${deviceId}/name`, payload);
+    return this.smarthomeService.put<StringWrapper, Device>(`${this.devicesPath}/${deviceId}/name`, {data: newName});
   }
 
 }

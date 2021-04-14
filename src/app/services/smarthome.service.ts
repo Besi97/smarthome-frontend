@@ -41,13 +41,13 @@ export class SmarthomeService {
     });
   }
 
-  post<T>(path: string, body: any): Observable<T> {
+  post<P, T>(path: string, body: P): Observable<T> {
     return this.requestWithAuthHeaders(authHeaders => {
       return this.http.post<T>(environment.apiBaseUrl + path, body, {headers: authHeaders});
     });
   }
 
-  put<T>(path: string, body: any): Observable<T> {
+  put<P, T>(path: string, body: P): Observable<T> {
     return this.requestWithAuthHeaders(authHeaders => {
       return this.http.put<T>(environment.apiBaseUrl + path, body, {headers: authHeaders});
     });
