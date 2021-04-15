@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
-import {AdminComponent} from './components/admin/admin.component';
+import {NavComponent} from './components/nav/nav.component';
 
 export const adminRoutes: Routes = [
-  { path: '', component: AdminComponent }
+  { path: '', component: NavComponent }
 ];

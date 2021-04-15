@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~11.2.1",
     "@angular/router": "~11.2.1",
     "angular-fire-schematics": "^1.0.0",
-    "@angular/material": "^11.2.1",
+    "@angular/material": "^11.2.9",
     "@angular/cdk": "^11.2.1",
     "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular-material-extensions/password-strength": "^8.1.1",
