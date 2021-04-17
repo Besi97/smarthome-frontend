@@ -30,6 +30,7 @@
     "material-design-icons": "^3.0.1",
     "ngx-auth-firebaseui": "^5.1.0",
     "rxjs": "~6.6.0",
+    "rxjs-observe": "^2.1.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
