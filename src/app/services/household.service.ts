@@ -6,6 +6,8 @@ import firebase from 'firebase';
 import {map} from 'rxjs/operators';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import Household from '../models/Household';
+import StringWrapper from '../models/StringWrapper';
 
 @Injectable({
   providedIn: 'root'

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable, merge } from 'rxjs';
 import { DeviceService } from 'src/app/services/device.service';
 import { observe } from 'rxjs-observe';
+import Device, { DeviceType } from 'src/app/models/Device';
 
 // TODO: Replace this with your own data model type
 export interface IDeviceItem {

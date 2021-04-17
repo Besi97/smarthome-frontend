@@ -1,3 +1,3 @@
-interface StringWrapper {
+export default interface StringWrapper {
   data: string;
 }

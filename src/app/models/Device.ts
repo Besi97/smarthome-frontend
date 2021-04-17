@@ -1,10 +1,10 @@
-interface Device{
+export default interface Device{
   id: string;
   name: string;
   type: DeviceType;
   householdId: string;
 }
 
-enum DeviceType {
+export enum DeviceType {
   DHT_22, LED_DRIVER
 }

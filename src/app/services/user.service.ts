@@ -7,6 +7,8 @@ import firebase from 'firebase';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import User = firebase.User;
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import FirebaseUser from '../models/FirebaseUser';
+import FirebaseUserPage from '../models/FirebaseUserPage';
 
 @Injectable({
   providedIn: 'root'

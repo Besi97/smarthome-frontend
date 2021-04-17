@@ -6,6 +6,9 @@ import {map} from 'rxjs/operators';
 import firebase from 'firebase';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import Device, { DeviceType } from '../models/Device';
+import StringWrapper from '../models/StringWrapper';
+import DeviceTypeWrapper from '../models/DeviceTypeWrapper';
 
 @Injectable({
   providedIn: 'root'
